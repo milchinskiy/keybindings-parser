@@ -5,6 +5,16 @@
 Tiny library for parsing keybindings from a string.
 And handle them via keysym & mod mask.
 
+## Installation
+
+Run the following Cargo command in your project directory:
+
+```bash
+cargo add keybindings-parser
+```
+
+### Usage example
+
 ```rust
 // init with default configuration
 let mut keyb = Keybindings::default();
@@ -15,7 +25,7 @@ keyb.add("command + a", Box::new(TestAction::Kill))?;
 // handle keybinging
 if let Some(handler) = keyb.handle(ModMask::MOD4, keysymdefs::keys::XK_a) {
     assert_eq!(handler.modifier(), ModMask::MOD4);
-    assert_eq!(handler.key(), keys::XK_a);
+    assert_eq!(handler.key(), keysymdefs::keys::XK_a);
     assert_eq!(handler.origin(), "command + a");
 
     // action that you provide  early
@@ -99,8 +109,8 @@ Main key of a keybinding. For example, `mod4 + a`, where `a` is the main key.
 Accepts all cleared names from `keysymdefs::keys`.
 For example:
 
-- `keys::XK_a` is just `a`
-- `keys::XF86XK_MonBrightnessUp` is just `MonBrightnessUp`
+- `keysymdefs::keys::XK_a` is just `a`
+- `keysymdefs::keys::XF86XK_MonBrightnessUp` is just `MonBrightnessUp`
 - etc.
 
 You free to use full canonical name of keys, like `XK_a`, `XF86XK_MonBrightnessUp`, etc.
@@ -154,6 +164,7 @@ impl KeyAction for TestAction {
     }
 }
 ```
+
 You are free to use as many `KeyAction` implementations as you need for
 your purposes. The above example is for demonstration purposes only.
 
