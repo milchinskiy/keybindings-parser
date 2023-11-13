@@ -1,0 +1,16 @@
+[package]
+name = "keybindings-parser"
+version = "0.1.0"
+edition = "2021"
+description = "library for parsing human keyboard shortcuts"
+license = "MIT OR Apache-2.0"
+keywords = ["parser", "keybindings", "x11", "xorg", "keysym"]
+categories = ["data-structures", "parsing", "os", "multimedia"]
+repository = "https://github.com/milchinskiy/keybindings-parser.git"
+homepage = "https://github.com/milchinskiy/keybindings-parser"
+documentation = "https://github.com/milchinskiy/keybindings-parser"
+readme = "README.md"
+changelog = "CHANGELOG.md"
+
+[dependencies]
+keysymdefs = { version = "0.2.0" }
