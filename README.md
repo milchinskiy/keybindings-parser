@@ -1,5 +1,7 @@
 # keybindings-parser
 
+[![Rust](https://github.com/milchinskiy/keybindings-parser/actions/workflows/tests.yml/badge.svg)](https://github.com/milchinskiy/keybindings-parser/actions/workflows/tests.yml)
+
 Tiny library for parsing keybindings from a string.
 And handle them via keysym & mod mask.
 
